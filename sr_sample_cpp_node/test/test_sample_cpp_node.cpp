@@ -3,8 +3,20 @@
 
 TEST(SampleCppTestSuite, checkParameterValue)
 {
-    // TODO: Add code to read parameter from server
-    ASSERT_TRUE(true);
+  const ros::M_string remapping_args;
+  ros::init(remapping_args, "sample_cpp_node");
+  const ros::NodeHandle nh;
+
+  ros::Rate rate(2);
+  ros::spinOnce();
+  rate.sleep();
+
+  std::string param_value;
+  const bool result = nh.getParam("my_param", param_value);
+  const std::string expected_value("my_param_test");
+
+  ASSERT_TRUE(result);
+  ASSERT_EQ(expected_value, param_value);
 }
 
 int main(int argc, char **argv)

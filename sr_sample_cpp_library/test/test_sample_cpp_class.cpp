@@ -15,8 +15,8 @@ TEST(SampleCppClassTestSuite, checkGetParameterValueFromName)
     std::string expected_result1("my_param_one_test");
     std::string expected_result2("my_param_two_test");
 
-    EXPECT_EQ(expected_result1, sample_object.getParameterValueFromName(param1));
-    EXPECT_EQ(expected_result2, sample_object.getParameterValueFromName(param2));
+    ASSERT_EQ(expected_result1, sample_object.getParameterValueFromName(param1));
+    ASSERT_EQ(expected_result2, sample_object.getParameterValueFromName(param2));
 }
 
 int main(int argc, char **argv)
