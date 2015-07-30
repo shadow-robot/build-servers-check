@@ -11,7 +11,7 @@ int main(int argc, char **argv)
 
   SampleCppClass sample_object;
 
-  std::string param_name("my_param");
+  std::string param_name("my_cpp_param");
   std::string param_value = sample_object.getParameterValueFromName(param_name);
 
   nh.setParam(param_name, param_value);

@@ -4,7 +4,7 @@
 TEST(SampleCppTestSuite, checkParameterValue)
 {
   const ros::M_string remapping_args;
-  ros::init(remapping_args, "sample_cpp_node");
+  ros::init(remapping_args, "test_sample_cpp_node");
   const ros::NodeHandle nh;
 
   ros::Rate rate(2);
@@ -12,8 +12,8 @@ TEST(SampleCppTestSuite, checkParameterValue)
   rate.sleep();
 
   std::string param_value;
-  const bool result = nh.getParam("my_param", param_value);
-  const std::string expected_value("my_param_test");
+  const bool result = nh.getParam("my_cpp_param", param_value);
+  const std::string expected_value("my_cpp_param_test");
 
   ASSERT_TRUE(result);
   ASSERT_EQ(expected_value, param_value);
