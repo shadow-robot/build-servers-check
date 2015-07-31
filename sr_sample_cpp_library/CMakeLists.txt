@@ -8,6 +8,7 @@ find_package(catkin REQUIRED COMPONENTS
 ###################################
 ## catkin specific configuration ##
 ###################################
+
 catkin_package(
   INCLUDE_DIRS include
   LIBRARIES sample_cpp_library
