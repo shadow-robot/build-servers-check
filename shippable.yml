@@ -4,8 +4,10 @@ python:
   - 2.7
 
 install:
+  - locale-gen en_US.UTF-8
   - sudo apt-get update
   - sudo apt-get install curl -y
+  - sudo apt-get install efsdfsdfsdsdgsdgsdgsdg
 
 script:
   - export toolset_branch="F#145_check_deb_packages"
