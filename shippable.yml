@@ -7,6 +7,9 @@ install:
   - locale-gen en_US.UTF-8
   - sudo apt-get update
   - sudo apt-get install curl -y
+  - echo test
+  - bash -c "echo test222"
+  - bash -c "ls"
   - sudo apt-get install efsdfsdfsdsdgsdgsdgsdg
 
 script:
