@@ -9,4 +9,4 @@ dependencies:
 
 test:
   override:
-    - docker run andriyp/ubuntu-ros-indigo-build-tools ./sr-build-tools/bin/sr-run-ci-build.sh "master" "circle" "check_cache,install,create_workspace,code_style_check,unit_tests,check_deb,code_coverage"
+    - docker run andriyp/ubuntu-ros-indigo-build-tools bash -c "./sr-build-tools/bin/sr-run-ci-build.sh master circle check_cache,install,create_workspace,code_style_check,unit_tests,check_deb,code_coverage"
