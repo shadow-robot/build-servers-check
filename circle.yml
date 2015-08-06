@@ -1,0 +1,12 @@
+machine:
+  services:
+    - docker
+
+dependencies:
+  override:
+    - docker info
+    - docker pull andriyp/ubuntu-ros-indigo-build-tools
+
+test:
+  override:
+    - docker run andriyp/ubuntu-ros-indigo-build-tools ./sr-build-tools/bin/sr-run-ci-build.sh "master" "circle" "check_cache,install,create_workspace,code_style_check,unit_tests,check_deb,code_coverage"
