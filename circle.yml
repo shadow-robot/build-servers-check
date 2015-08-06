@@ -1,16 +1,17 @@
 machine:
-  environment:
-    docker_image: andriyp/ubuntu-ros-indigo-build-tools
   services:
     - docker
 
 dependencies:
   override:
-    - docker info
-    - docker pull $docker_image
+    - sudo apt-get update
+    - sudo apt-get install curl -y
 
 test:
   override:
-    - env
-    - git config --get remote.origin.url
-    - docker run $docker_image /sr-build-tools/bin/sr-run-ci-build.sh "F_circle_ci_support" "circle" "check_cache,install,create_workspace,code_style_check,unit_tests,check_deb,code_coverage"
+    - export CIRCLE_REPO_DIR=`pwd`
+    - export toolset_branch="F_circle_ci_support"
+    - export server_type="circle"
+    - export used_modules="check_cache,install,create_workspace,code_style_check,unit_tests,check_deb,code_coverage"
+    - export remote_shell_script="https://raw.githubusercontent.com/shadow-robot/sr-build-tools/$toolset_branch/bin/sr-run-ci-build.sh"
+    - curl -s "$( echo "$remote_shell_script" | sed 's/#/%23/g' )" | bash /dev/stdin "$toolset_branch" $server_type $used_modules
