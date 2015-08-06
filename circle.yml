@@ -11,7 +11,7 @@ test:
   override:
     - curl -s "$( echo "$remote_shell_script" | sed 's/#/%23/g' )" | bash /dev/stdin "$toolset_branch" $server_type $used_modules
         environment:
-          CIRCLE_REPO_DIR: `pwd`
+          CIRCLE_REPO_DIR: ${PWD}
           toolset_branch: F_circle_ci_support
           server_type: circle
           used_modules: check_cache,install,create_workspace,code_style_check,unit_tests,check_deb,code_coverage
