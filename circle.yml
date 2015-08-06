@@ -1,14 +1,16 @@
 machine:
+  environment:
+    docker_image: andriyp/ubuntu-ros-indigo-build-tools
   services:
     - docker
 
 dependencies:
   override:
     - docker info
-    - docker pull andriyp/ubuntu-ros-indigo-build-tools
+    - docker pull $docker_image
 
 test:
   override:
     - env
     - git config --get remote.origin.url
-    - docker run andriyp/ubuntu-ros-indigo-build-tools /sr-build-tools/bin/sr-run-ci-build.sh "F_circle_ci_support" "circle" "check_cache,install,create_workspace,code_style_check,unit_tests,check_deb,code_coverage"
+    - docker run $docker_image /sr-build-tools/bin/sr-run-ci-build.sh "F_circle_ci_support" "circle" "check_cache,install,create_workspace,code_style_check,unit_tests,check_deb,code_coverage"
