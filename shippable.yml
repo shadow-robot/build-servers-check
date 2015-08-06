@@ -1,24 +1,14 @@
 language: python
-build_image: shippableimages/ubuntu1404_python
 python:
   - 2.7
 
 install:
-  - echo test
-  - bash -c "echo test222"
-  - bash -c "ls"
-  - locale-gen en_US.UTF-8
   - sudo apt-get update
   - sudo apt-get install curl -y
-  - echo test
-  - bash -c "echo test222"
-  - bash -c "ls"
-  - sudo apt-get install efsdfsdfsdsdgsdgsdgsdg
 
 script:
-  - export toolset_branch="F#145_check_deb_packages"
+  - export toolset_branch="master"
   - export server_type="shippable"
-#  - export used_modules="check_cache,install,create_workspace,code_style_check,unit_tests,check_deb,code_coverage"
-  - export used_modules="check_cache,install,create_workspace,code_style_check,unit_tests,code_coverage"
+  - export used_modules="check_cache,install,create_workspace,code_style_check,unit_tests,check_deb,code_coverage"
   - export remote_shell_script="https://raw.githubusercontent.com/shadow-robot/sr-build-tools/$toolset_branch/bin/sr-run-ci-build.sh"
   - curl -s "$( echo "$remote_shell_script" | sed 's/#/%23/g' )" | bash /dev/stdin "$toolset_branch" $server_type $used_modules
