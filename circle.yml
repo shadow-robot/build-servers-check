@@ -10,4 +10,5 @@ dependencies:
 test:
   override:
     - env
+    - git config --get remote.origin.url
     - docker run andriyp/ubuntu-ros-indigo-build-tools /sr-build-tools/bin/sr-run-ci-build.sh "F_circle_ci_support" "circle" "check_cache,install,create_workspace,code_style_check,unit_tests,check_deb,code_coverage"
