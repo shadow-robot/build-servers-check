@@ -10,6 +10,6 @@ Semaphore
 
 Circle
 
-[![Circle CI](https://circleci.com/gh/shadow-robot/build-servers-check.svg?style=svg)](https://circleci.com/gh/shadow-robot/build-servers-check)
+[![Circle CI](https://circleci.com/gh/shadow-robot/build-servers-check.svg?style=shield)](https://circleci.com/gh/shadow-robot/build-servers-check)
 
 Sample projects to check status of the build servers
