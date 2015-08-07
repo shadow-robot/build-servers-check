@@ -2,7 +2,6 @@ machine:
   services:
     - docker
   environment:
-    CIRCLE_REPO_DIR: $HOME/$CIRCLE_PROJECT_REPONAME
     toolset_branch: F_circle_ci_support
     server_type: circle
     used_modules: check_cache,install,create_workspace,code_style_check,unit_tests,check_deb,code_coverage
