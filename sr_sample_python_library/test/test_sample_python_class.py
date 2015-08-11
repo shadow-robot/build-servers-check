@@ -1,3 +1,7 @@
+#!/usr/bin/env python
+"""
+See README.md
+"""
 
 from unittest import TestCase
 from sr_sample_python_library.sample_python_class import SamplePythonClass

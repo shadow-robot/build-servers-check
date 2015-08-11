@@ -1,3 +1,7 @@
+#!/usr/bin/env python
+"""
+See README.md
+"""
 
 class SamplePythonClass(object):
 
