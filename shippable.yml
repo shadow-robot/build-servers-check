@@ -2,6 +2,10 @@ language: python
 python:
   - 2.7
 
+#codecov token (encrypted)
+env:
+  - secure: NBBFiZ4mROjtgPPdjameYDr1D1lzxALq3VZpgBOowavorBDPwAy+r1oOoZS7JFgtBb7UuU7ecRciMVzbuHOHsKthCP7s7XOF3jI22zzaDNKxiofIGKnns5OfS+fBYvjOVhcuRrBoFO30MyYUwSxQV7OHVdVg8a+r7HvdLLExON/WtNu3nhrMGAKi1CzvNez+Dsve7YyJyJZL9K6FI4lCbkymtO1E9guT2sxqvjt+Boh+gFLZdaV22bweVO8XkACnihjvU8uqvHG26JohliJkOqTXsacDxiGzyNSmGowJbkAc8kFwoVBaRXtZjZ0mGPDsmVIOs1Xbzy699nVmw+N4MA==
+
 install:
   - sudo apt-get update
   - sudo apt-get install curl -y
@@ -9,6 +13,6 @@ install:
 script:
   - export toolset_branch="master"
   - export server_type="shippable"
-  - export used_modules="check_cache,install,create_workspace,code_style_check,unit_tests,check_deb,code_coverage"
+  - export used_modules="check_cache,install,create_workspace,code_style_check,unit_tests,check_deb,codecov_tool"
   - export remote_shell_script="https://raw.githubusercontent.com/shadow-robot/sr-build-tools/$toolset_branch/bin/sr-run-ci-build.sh"
   - curl -s "$( echo "$remote_shell_script" | sed 's/#/%23/g' )" | bash /dev/stdin "$toolset_branch" $server_type $used_modules
