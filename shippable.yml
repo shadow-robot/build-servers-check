@@ -11,8 +11,8 @@ install:
   - sudo apt-get install curl -y
 
 script:
-  - export toolset_branch="F_local_build"
+  - export toolset_branch="master"
   - export server_type="shippable"
-  - export used_modules="check_cache,install,create_workspace,code_style_check,unit_tests,codecov_tool"
+  - export used_modules="check_cache,install,create_workspace,check_build,code_style_check,check_deb,codecov_tool"
   - export remote_shell_script="https://raw.githubusercontent.com/shadow-robot/sr-build-tools/$toolset_branch/bin/sr-run-ci-build.sh"
   - curl -s "$( echo "$remote_shell_script" | sed 's/#/%23/g' )" | bash /dev/stdin "$toolset_branch" $server_type $used_modules
