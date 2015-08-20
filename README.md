@@ -16,4 +16,15 @@ CodeCov
 
 [![codecov.io](http://codecov.io/github/shadow-robot/build-servers-check/coverage.svg?branch=indigo-devel)](http://codecov.io/github/shadow-robot/build-servers-check?branch=indigo-devel)
 
-Sample projects to check status of the build servers
+The sample stack to check status of the build servers.
+
+This stack contains four packages
+
+ * **sr_sample_cpp_library** - sample C++ library package with one class and unit test
+ * **sr_sample_cpp_node** - C++ node which depend on C++ library and integration test 
+ * **sr_sample_python_library** - sample Python library with one class and unit test
+ * **sr_sample_python_node** - Python node which depend on Python library and integration test
+  
+Every supported CI server runs all major modules on this sample stack in order to check if modules are working on the server.
+
+
