@@ -1,0 +1,6 @@
+<launch>
+
+  <node name="sample_python_node" pkg="sr_sample_python_node" type="sample_python_node.py" output="screen"/>
+
+  <test test-name="test_sample_python_node" pkg="sr_sample_python_node" type="test_sample_python_node.py"/>
+</launch>
