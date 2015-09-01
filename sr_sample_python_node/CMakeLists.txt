@@ -3,6 +3,8 @@ project(sr_sample_python_node)
 
 find_package(catkin REQUIRED)
 
+find_package(sr_sample_python_library REQUIRED)
+
 catkin_python_setup()
 
 
@@ -11,7 +13,7 @@ catkin_python_setup()
 ###################################
 
 catkin_package(
-  #CATKIN_DEPENDS sr_sample_python_library
+  CATKIN_DEPENDS sr_sample_python_library
 )
 
 #############
