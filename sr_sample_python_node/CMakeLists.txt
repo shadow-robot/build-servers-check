@@ -13,7 +13,7 @@ catkin_python_setup()
 ###################################
 
 catkin_package(
-  CATKIN_DEPENDS sr_sample_python_library sr_ur_msgs
+  CATKIN_DEPENDS sr_sample_python_library
 )
 
 #############
