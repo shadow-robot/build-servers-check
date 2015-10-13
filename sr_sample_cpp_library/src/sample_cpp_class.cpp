@@ -34,9 +34,6 @@ std::string SampleCppClass::getParameterValueFromName(const std::string &paramet
     std::string result = parameter_name;
     result.append("_test");
     // small changes
-    // small changes again
-    // small changes again 2
-    // small changes again 3
     return result;
 }
 
