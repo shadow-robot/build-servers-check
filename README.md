@@ -6,7 +6,7 @@ Shippable
 
 Semaphore
 
-[![Build Status](https://semaphoreci.com/api/v1/projects/2a789441-5243-43ab-99e5-2efa81d725da/516315/shields_badge.svg)](https://semaphoreci.com/andriy/build-servers-check)
+[![Build Status](https://semaphoreci.com/api/v1/projects/3d9a5e21-cb5b-4fae-a942-93e6515682cb/571657/shields_badge.svg)](https://semaphoreci.com/shadow-robot/build-servers-check)
 
 Circle
 
