@@ -1,5 +1,9 @@
 # build-servers-check
 
+Travis
+
+[![Build Status](https://travis-ci.org/shadow-robot/build-servers-check.svg)](https://travis-ci.org/shadow-robot/build-servers-check)
+
 Shippable
 
 [![Build Status](https://api.shippable.com/projects/55ba073fedd7f2c0528ca1a8/badge?branchName=indigo-devel)](https://app.shippable.com/projects/55ba073fedd7f2c0528ca1a8/builds/latest)
