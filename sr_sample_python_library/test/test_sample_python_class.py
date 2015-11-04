@@ -16,7 +16,7 @@ class TestSamplePythonClass(TestCase):
         param1 = "my_python_param_1"
         param2 = "my_python_param_2"
 
-        expected_value1 = "my_python_param_1_test"
+        expected_value1 = "my_python_param_1_test222222"
         expected_value2 = "my_python_param_2_test"
 
         self.assertEqual(expected_value1,
