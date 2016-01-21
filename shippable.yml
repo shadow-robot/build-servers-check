@@ -11,7 +11,7 @@ install:
   - sudo apt-get install curl -y
 
 script:
-  - export toolset_branch="master"
+  - export toolset_branch="F_adapt_ansible_v2"
   - export server_type="shippable"
   - export used_modules="check_cache,check_build,code_style_check,check_deb_make,codecov_tool"
   - export remote_shell_script="https://raw.githubusercontent.com/shadow-robot/sr-build-tools/$toolset_branch/bin/sr-run-ci-build.sh"
