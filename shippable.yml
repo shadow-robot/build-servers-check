@@ -13,7 +13,6 @@ build:
     pull: true
     options: "-e HOME=/root"
   ci:
-    - env
     - sudo apt-get update
     - sudo apt-get install curl -y
     - export toolset_branch="master"
