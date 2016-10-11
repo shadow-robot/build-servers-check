@@ -1,4 +1,4 @@
 - git:
-    local-name: sr_ur_arm
-    uri: 'https://github.com/shadow-robot/sr_ur_arm.git'
+    local-name: ros_comm
+    uri: 'https://github.com/ros/ros_comm.git'
     version: indigo-devel
