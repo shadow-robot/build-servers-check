@@ -14,7 +14,7 @@ Shadow's Jenkins
 
 [![Build Status](http://jenkins.shadow.local:8080/buildStatus/icon?job=auto_build-servers-check_indigo-devel_unit_tests_and_code_coverage)](http://jenkins.shadow.local:8080/job/auto_build-servers-check_indigo-devel_unit_tests_and_code_coverage)
 
-The sample stack to check status  
+The sample stack to check status 
 of the build servers.
 
 This stack contains four packages
