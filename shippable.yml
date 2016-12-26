@@ -4,8 +4,7 @@ python:
 
 # codecov token and slack web hook URL (encrypted)
 env:
-  global:
-    - secure: bIdCwrY+u725AbVaSuuIvPPUhqB2AHG9ds833qC0D4/5CWbYqxIgzjHRsKcj8q04ipssaxClao0lpPqHMOWOl0u9raOogQ2bT+LyJ4YrKTpgFQBe6NYOacHGKuPQ5XYkuIGXJFV6vMHiCXu47YypaSUyitKlMQKm4DfgLQN7XbV9xYOXCYPWo1MRaLejIlcvxAgw2ZiMUkhlIaP4g7uwzhQEBh7liayQbq43RrqJlZPHLJxOomdli79tcaffekAv3EcUrX83myzBVxRhbwkHDBcoVG3xNt8DWXUQlwKfH3HzAYNFE2N3lmal7zUPhWvHWugrAhpkYhJp5y0NdkTuYQ==
+  - secure: BCgpnH0qoAyPf3ScsgE6gMqAjmOjLmzwJdaCNvL8WrhsQ+8XDkCcq8Sto3w+U/0gbxWQ88RVLGvnzDzQk4xKP1W8vlAB1czllVs3PDV6grsL05FYBfOm4/tUmTRk/YhhGGgQDCi+zi83NNphjrYprPhvJM9HV1PDViXIkhiX5qi6GKmiG2xVWixdTcfDnRl2B8SciL8g4yCc5ByhOeMG2YlqdQa9Ph/sfOQ0aTed32wLI3YuZoTCnz+hP1L0PEi1/aupT/3+Pg1KmeJL+nd2L6517vEf6SIeqpPYkiwAx790Tx2sPY02G7EGbcrpiNceTHB7nqFMzyCRUUIBJ4oW6Q==
 
 build:
   pre_ci_boot:
@@ -18,7 +17,7 @@ build:
     - sudo apt-get install curl -y
     - export toolset_branch="master"
     - export server_type="shippable"
-    - export used_modules="check_cache,check_build,code_style_check,check_deb_make,codecov_tool"
+    - export used_modules="check_cache,check_build,code_style_check,check_deb_make,code_coverage"
     - export remote_shell_script="https://raw.githubusercontent.com/shadow-robot/sr-build-tools/$toolset_branch/bin/sr-run-ci-build.sh"
     - curl -s "$( echo "$remote_shell_script" | sed 's/#/%23/g' )" | bash /dev/stdin "$toolset_branch" $server_type $used_modules
   on_failure:
