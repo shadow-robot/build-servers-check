@@ -19,3 +19,5 @@ This stack contains four packages
  * **sr_sample_python_node** - Python node which depend on Python library and integration test
   
 Every supported CI server runs all major modules on this sample stack in order to check if modules are working on the server.
+
+
