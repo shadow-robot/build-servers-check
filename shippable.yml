@@ -14,7 +14,7 @@ build:
   ci:
     - sudo apt-get update
     - sudo apt-get install curl -y
-    - export toolset_branch="B_fix_debian_build_issues"
+    - export toolset_branch="master"
     - export server_type="shippable"
     - export ros_release_name="kinetic"
     - export ubuntu_version_name="xenial"

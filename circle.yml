@@ -2,7 +2,7 @@ machine:
   services:
     - docker
   environment:
-    toolset_branch: B_fix_debian_build_issues
+    toolset_branch: master
     server_type: circle
     ros_release_name: kinetic
     ubuntu_version_name: xenial
