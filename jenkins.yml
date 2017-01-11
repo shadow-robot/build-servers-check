@@ -1,0 +1,18 @@
+defaults:
+  settings:
+    ros_release: indigo
+    docker_image_name: shadowrobot/ubuntu-ros-indigo-build-tools
+    docker_image_tag: trusty-indigo
+    template_job_name: template_unit_tests_and_code_coverage
+    modules_list: check_cache,code_coverage
+
+trunks:
+  - name: indigo-devel
+  - name: kinetic-devel
+    settings:
+      ros_release: kinetic
+      docker_image_name: shadowrobot/ubuntu-ros-kinetic-build-tools
+      docker_image_tag: xenial-kinetic
+
+branch:
+  parent: indigo-devel
