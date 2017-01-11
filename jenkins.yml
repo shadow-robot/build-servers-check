@@ -1,5 +1,6 @@
 defaults:
   settings:
+    ubuntu_version: trusty
     ros_release: indigo
     docker_image_name: shadowrobot/build-tools
     docker_image_tag: trusty-indigo
@@ -10,6 +11,7 @@ trunks:
   - name: indigo-devel
   - name: kinetic-devel
     settings:
+      ubuntu_version: xenial
       ros_release: kinetic
       docker_image_tag: xenial-kinetic
 
