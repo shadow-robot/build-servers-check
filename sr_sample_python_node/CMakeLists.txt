@@ -35,3 +35,10 @@ if (CATKIN_ENABLE_TESTING)
   add_rostest(test/test_sample_python_node.test)
 
 endif()
+
+if (RUN_BENCHMARKING)
+
+  find_package(rostest REQUIRED)
+  add_rostest(test/sample_node_benchmarking.test)
+
+endif()
