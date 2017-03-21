@@ -14,6 +14,7 @@ def execute_benchmarking(request):
     while not rospy.is_shutdown():
         if 'my_python_param_test' != param_value:
             rospy.sleep(0.1)
+
     end = time.time()
     time_spend = end - start
 
