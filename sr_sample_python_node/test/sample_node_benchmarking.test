@@ -4,7 +4,7 @@
   <node name="sample_python_node" pkg="sr_sample_python_node" type="sample_python_node.py" output="screen"/>
   <node name="sample_node_benchmarking" pkg="sr_sample_python_node" type="sample_node_benchmarking.py" output="screen"/>
 
-  <test test-name="run_benchmarking" pkg="sr_benchmarking" type="run_benchmarking.py">
+  <test test-name="run_benchmarking" pkg="sr_benchmarking" time-limit="3600.0" type="run_benchmarking.py">
     <rosparam param="input_files">[]</rosparam>
     <param name="output_file" type="string" value="$(arg output_folder)/sample_test_benchmarking.csv" />
   </test>
