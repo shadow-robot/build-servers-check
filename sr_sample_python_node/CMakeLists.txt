@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 2.8.3)
 project(sr_sample_python_node)
 
-find_package(catkin REQUIRED sr_benchmarking)
+find_package(catkin REQUIRED sr_benchmarking sr_benchmarking_msgs)
 
 find_package(sr_sample_python_library REQUIRED)
 
@@ -13,7 +13,7 @@ catkin_python_setup()
 ###################################
 
 catkin_package(
-  CATKIN_DEPENDS sr_sample_python_library sr_benchmarking
+  CATKIN_DEPENDS sr_sample_python_library sr_benchmarking sr_benchmarking_msgs
 )
 
 #############
