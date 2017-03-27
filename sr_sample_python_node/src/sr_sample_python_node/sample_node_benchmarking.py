@@ -21,7 +21,7 @@ def execute_benchmarking(request):
     time_spend = end - start
 
     with open(request.output_file, 'a') as file:
-        file.write('result,' + str(time_spend))
+        file.write('result,' + str(time_spend) + '\n')
     return ExecuteBenchmarkingResponse(True)
 
 if __name__ == "__main__":
