@@ -18,7 +18,7 @@ def execute_benchmarking(request):
     end = time.time()
     time_spend = end - start
 
-    with open(request.output_file, 'w') as file:
+    with open(request.output_file, 'a') as file:
         file.write('result,' + time_spend)
     return ExecuteBenchmarkingResponse(True)
 
