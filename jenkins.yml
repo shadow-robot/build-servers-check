@@ -11,25 +11,21 @@ settings:
     modules:
       - check_cache
       - code_coverage
-  benchmarking:
-    - package: sr_sample_cpp_node
-      node: test_calculation_speed
-      template_job_name: template_benchmarking
-      benchmarker: speed_test
-      timeout: 180 # in minutes
-      input:
-        - file: /sr_sample_cpp_node/test/data/test1.txt
-#        file: /sr_sample_cpp_node/test/data/test1.txt
-#        folder: /sr_sample_cpp_node/test/data/test1.txt
-#        url: http://www.example.com/data.tar.gz
-# can be also folder and url which is pointing to file
-# if file is archive than it is extracted (tar.gz is supported)
-      output:
-        format: html
-# supported formats html, xml, json
 
 trunks:
   - name: indigo-devel
+    settings:
+      - toolset:
+          template_job_name: template_unit_tests_and_code_coverage
+          modules:
+            - check_cache
+            - code_coverage
+      - toolset:
+          template_job_name: template_benchmarking
+          modules:
+            - check_cache
+            - benchmarking
+
   - name: kinetic-devel
     settings:
       ubuntu:
