@@ -9,9 +9,8 @@ jobs:
           server_type: circle
           ros_release_name: kinetic
           ubuntu_version_name: xenial
-          used_modules: check_cache,check_build,code_style_check,check_deb_make,codecov_tool
-          CIRCLE_CI_TESTS_DIR: /home/user/test_results
-          CIRCLE_CI_CODE_COVERAGE: /home/user/code_coverage_results
+#          used_modules: check_cache,check_build,code_style_check,check_deb_make,codecov_tool
+          used_modules: check_cache,code_style_check
 
     steps:
       - checkout
@@ -22,8 +21,8 @@ jobs:
       - run: gosu $MY_USERNAME /tmp/oneliner "$toolset_branch" $server_type $used_modules
 
       - store_test_results:
-          path: /home/user/test_results
+          path: test_results
 
       - store_artifacts:
-          path: /home/user/code_coverage_results
+          path: code_coverage_results
           destination: code_coverage
