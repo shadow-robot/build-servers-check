@@ -2,6 +2,7 @@ version: 2
 jobs:
   build:
     docker:
+      working_directory: /tmp
       - image: shadowrobot/build-tools:xenial-kinetic
         environment:
           toolset_branch: F#SRC-1420_circle_ci_2_0 # DEBUG: Change to master
@@ -13,7 +14,6 @@ jobs:
 
     steps:
       - checkout
-      - run: cd /tmp
       - run: echo 'eval CIRCLE_WORKING_DIRECTORY=$CIRCLE_WORKING_DIRECTORY' >> $BASH_ENV
       - run: echo 'export remote_shell_script="https://raw.githubusercontent.com/shadow-robot/sr-build-tools/$toolset_branch/bin/sr-run-ci-build.sh"' >> $BASH_ENV
       - run: wget -O /tmp/oneliner "$( echo "$remote_shell_script" | sed 's/#/%23/g' )"
