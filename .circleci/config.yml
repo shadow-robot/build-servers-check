@@ -5,12 +5,11 @@ jobs:
     docker:
       - image: shadowrobot/build-tools:xenial-kinetic
         environment:
-          toolset_branch: F#SRC-1420_circle_ci_2_0 # DEBUG: Change to master
+          toolset_branch: F#SRC-1420_circle_ci_2_0 #DEBUG: Change to master
           server_type: circle
           ros_release_name: kinetic
           ubuntu_version_name: xenial
-#          used_modules: check_cache,check_build,code_style_check,check_deb_make,codecov_tool
-          used_modules: check_cache,code_style_check
+          used_modules: check_cache,check_build,code_style_check,check_deb_make,codecov_tool
           CIRCLE_CI_TESTS_DIR: /home/user/test_results
           CIRCLE_CI_CODE_COVERAGE: /home/user/code_coverage_results
 
