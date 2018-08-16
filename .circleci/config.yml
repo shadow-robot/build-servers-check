@@ -2,19 +2,14 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/<language>:<version TAG>
-    steps:
+      - image: shadowrobot/build-tools:xenial-kinetic
+        environment:
+          toolset_branch: F#SRC-1420_circle_ci_2_0 # DEBUG: Change to master
+          server_type: circle2 # DEBUG: change to circle
+          ros_release_name: kinetic
+          ubuntu_version_name: xenial
+#          used_modules: check_cache,check_build,code_style_check,check_deb_make,codecov_tool
+          used_modules: check_cache,code_style_check
+          remote_shell_script: 'https://raw.githubusercontent.com/shadow-robot/sr-build-tools/$toolset_branch/bin/sr-run-ci-build.sh'
       - checkout
-      - run: <command>
-  test:
-    docker:
-      - image: circleci/<language>:<version TAG>
-    steps:
-      - checkout
-      - run: <command>
-workflows:
-  version: 2
-  build_and_test:
-    jobs:
-      - build
-      - test
+      - run: curl -s "$( echo "$remote_shell_script" | sed 's/#/%23/g' )" | bash /dev/stdin "$toolset_branch" $server_type $used_modules
