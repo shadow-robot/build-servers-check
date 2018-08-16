@@ -14,6 +14,7 @@ jobs:
     steps:
       - checkout
       - run: whoami
+      - run: ls -al ~/
       - run: ls -al $HOME
       - run: ls -al $CIRCLE_WORKING_DIRECTORY
       - run: echo 'export remote_shell_script="https://raw.githubusercontent.com/shadow-robot/sr-build-tools/$toolset_branch/bin/sr-run-ci-build.sh"' >> $BASH_ENV
