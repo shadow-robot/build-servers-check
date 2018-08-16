@@ -23,8 +23,8 @@ jobs:
       - run: gosu $MY_USERNAME /tmp/oneliner "$toolset_branch" $server_type $used_modules
 
       - store_test_results:
-          path: $CIRCLE_CI_TESTS_DIR
+          path: /home/user/test_results
 
       - store_artifacts:
-          path: $CIRCLE_CI_CODE_COVERAGE_DIR
+          path: /home/user/code_coverage_results
           destination: code_coverage
