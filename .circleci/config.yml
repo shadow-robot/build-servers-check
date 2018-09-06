@@ -3,7 +3,7 @@ jobs:
   build:
     working_directory: /tmp/repository
     docker:
-      - image: shadowrobot/build-tools:xenial-kinetic
+      - image: shadowrobot/build-tools:deleteme
         environment:
           toolset_branch: master
           server_type: circle
