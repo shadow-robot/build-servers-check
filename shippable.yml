@@ -9,7 +9,7 @@ env:
 build:
   pre_ci_boot:
     image_name: shadowrobot/build-tools
-    image_tag: xenial-kinetic
+    image_tag: deleteme
     pull: true
   ci:
     - export toolset_branch="master"
