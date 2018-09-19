@@ -22,6 +22,14 @@ trunks:
         release: kinetic
       docker:
         tag: xenial-kinetic
+  - name: melodic-devel
+    settings:
+      ubuntu:
+        version: bionic
+      ros:
+        release: melodic
+      docker:
+        tag: bionic-melodic
 
 branch:
-  parent: kinetic-devel
+  parent: melodic-devel
