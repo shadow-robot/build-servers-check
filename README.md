@@ -10,7 +10,7 @@
 
 # build-servers-check
 
-The sample stack to check status of the build servers.
+The sample stack to check status of the build servers. 
  
 This stack contains four packages
 
