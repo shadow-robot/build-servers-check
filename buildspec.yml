@@ -1,6 +1,8 @@
 #for AWS CodeBuild
- version: 0.1
- env:
+
+version: 0.1
+
+env:
   variables:
      ubuntu_version: "bionic"
      ros_release: "melodic"
