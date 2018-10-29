@@ -1,0 +1,23 @@
+#for AWS CodeBuild
+
+version: 0.1
+
+env:
+  variables:
+     ubuntu_version: "xenial"
+     ros_release: "kinetic"
+     travis_repo_dir: "/home/user/workspace/src/"
+     travis_is_pull_request: "false"
+phases:
+  build:
+    commands:
+      - echo Build started on `date`
+      - env
+      - ls -la /home/user
+      - cp -r $CODEBUILD_SRC_DIR/* /home/user/workspace/src/
+      - cd /home/user/sr-build-tools/ansible && git pull && git checkout master && sudo PYTHONUNBUFFERED=1 ansible-playbook -e travis_repo_dir=$travis_repo_dir -e travis_is_pull_request=false -e codecov_secure=codecov_secure -v -i "localhost," -c local docker_site.yml --tags "travis,check_cache,check_build,code_style_check,check_deb_make,codecov_tool"
+artifacts:
+  files:
+    - 'codecoverage/*'
+    - 'testresults/*'
+  base-directory: '/root/workspace'
