@@ -22,10 +22,6 @@ phases:
       - env
       - ls -la "$relative_job_path"
       - cp -r $CODEBUILD_SRC_DIR/* /home/user/workspace/src/
-      - echo Testing curl
-      - curl -Is http://www.google.com | head -n 1
-      - echo Displaying Docker ID
-      - echo $(cat /proc/self/cgroup | grep "docker" | sed s/\\//\\n/g | tail -1)
       - echo Running "$remote_shell_script" with stdin values $toolset_branch $server_type $used_modules $relative_job_path
       - curl -s "$( echo "$remote_shell_script" | sed 's/#/%23/g' )" | bash /dev/stdin $toolset_branch $server_type $used_modules $relative_job_path 
 artifacts:
