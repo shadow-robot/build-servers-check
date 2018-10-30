@@ -5,8 +5,9 @@ version: 0.2
 
 env:
   variables:
-     toolset_branch: "master"
-     server_type: "local"
+     #change the line below to master (BEFORE MERGING!) 
+     toolset_branch: "F#SRC-2345_aws_build_of_build-servers-check"
+     server_type: "aws"
      used_modules: "check_cache,code_coverage"
      ros_release_name: "kinetic"
      ubuntu_version_name: "xenial"
@@ -14,7 +15,8 @@ env:
      relative_job_path: "/home/user"
      unit_tests_result_dir: "$relative_job_path/unit_tests"
      coverage_tests_result_dir: "$relative_job_path/code_coverage"
-     remote_shell_script: "https://raw.githubusercontent.com/shadow-robot/sr-build-tools/master/bin/sr-run-ci-build.sh"
+     #change the line below to "https://raw.githubusercontent.com/shadow-robot/sr-build-tools/master/bin/sr-run-ci-build.sh" (BEFORE MERGING)
+     remote_shell_script: "https://raw.githubusercontent.com/shadow-robot/sr-build-tools/F%23SRC-2345_aws_build_of_build-servers-check/bin/sr-run-ci-build.sh"
 phases:
   build:
     commands:
