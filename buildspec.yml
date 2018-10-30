@@ -14,7 +14,7 @@ env:
      relative_job_path: "/home/user"
      unit_tests_result_dir: "$relative_job_path/unit_tests"
      coverage_tests_result_dir: "$relative_job_path/code_coverage"
-     remote_shell_script: "https://raw.githubusercontent.com/shadow-robot/sr-build-tools/$toolset_branch/bin/sr-run-ci-build.sh"
+     remote_shell_script: "https://raw.githubusercontent.com/shadow-robot/sr-build-tools/master/bin/sr-run-ci-build.sh"
 phases:
   build:
     commands:
