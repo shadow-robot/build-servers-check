@@ -5,18 +5,24 @@ version: 0.2
 
 env:
   variables:
-     ubuntu_version: "xenial"
-     ros_release: "kinetic"
-     travis_repo_dir: "/home/user/workspace/src/"
-     travis_is_pull_request: "false"
+     toolset_branch: "master"
+     server_type: "local"
+     used_modules: "check_cache,code_coverage"
+     ros_release_name: "kinetic"
+     ubuntu_version_name: "xenial"
+     docker_image_name: "shadowrobot/build-tools:xenial-kinetic"
+     relative_job_path: "/home/user"
+     unit_tests_result_dir: "$relative_job_path/unit_tests"
+     coverage_tests_result_dir: "$relative_job_path/code_coverage"
+     remote_shell_script: "https://raw.githubusercontent.com/shadow-robot/sr-build-tools/$toolset_branch/bin/sr-run-ci-build.sh"
 phases:
   build:
     commands:
       - echo Build started on `date`
       - env
-      - ls -la /home/user
+      - ls -la "$relative_job_path"
       - cp -r $CODEBUILD_SRC_DIR/* /home/user/workspace/src/
-      - cd /home/user/sr-build-tools/ansible && git pull && git checkout master && sudo PYTHONUNBUFFERED=1 ansible-playbook -e travis_repo_dir=$travis_repo_dir -e travis_is_pull_request=false -e codecov_secure=codecov_secure -v -i "localhost," -c local docker_site.yml --tags "travis,check_cache,check_build,code_style_check,check_deb_make,codecov_tool"
+      - curl -s "$( echo "$remote_shell_script" | sed 's/#/%23/g' )" | bash /dev/stdin "$toolset_branch" $server_type $used_modules $relative_job_path 
 artifacts:
   files:
     - 'codecoverage/*'
