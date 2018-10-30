@@ -1,6 +1,7 @@
 #for AWS CodeBuild
 
-version: 0.1
+#this version MUST be 0.2 as per AWS CodeBuild BuildSpec file rules
+version: 0.2
 
 env:
   variables:
