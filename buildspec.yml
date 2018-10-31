@@ -30,6 +30,7 @@ phases:
       - chmod 755 /tmp/oneliner
       - cd /tmp
       - gosu $MY_USERNAME /tmp/oneliner "$toolset_branch" $server_type $used_modules $relative_job_path 
+      
 artifacts:
   files:
     - 'codecoverage/*'
