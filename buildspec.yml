@@ -8,7 +8,7 @@ env:
      #change the line below to master (BEFORE MERGING!) 
      toolset_branch: "F#SRC-2345_aws_build_of_build-servers-check"
      server_type: "local-docker"
-     used_modules: "check_cache,code_coverage"
+     used_modules: "local,check_cache,code_coverage"
      ros_release_name: "kinetic"
      ubuntu_version_name: "xenial"
      docker_image_name: "shadowrobot/build-tools:xenial-kinetic"
@@ -29,7 +29,7 @@ phases:
       - wget -O /tmp/oneliner "$( echo "$remote_shell_script" | sed 's/#/%23/g' )"
       - chmod 755 /tmp/oneliner
       - cd /tmp
-      - gosu $MY_USERNAME /tmp/oneliner "$toolset_branch" $server_type $used_modules $relative_job_path      
+      - gosu $MY_USERNAME /tmp/oneliner $toolset_branch $server_type $used_modules $relative_job_path      
 artifacts:
   files:
     - 'codecoverage/*'
