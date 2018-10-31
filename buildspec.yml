@@ -24,7 +24,8 @@ phases:
       - env
       - ls -la "$relative_job_path"
       - chown -R $MY_USERNAME:$MY_USERNAME $CODEBUILD_SRC_DIR
-      - mv -r $CODEBUILD_SRC_DIR/* /home/user/workspace/src/
+      - cp -r $CODEBUILD_SRC_DIR/* /home/user/workspace/src/
+      - rm -r $CODEBUILD_SRC_DIR/
       - echo Running "$remote_shell_script" with stdin values $toolset_branch $server_type $used_modules $relative_job_path
       - wget -O /tmp/oneliner "$( echo "$remote_shell_script" | sed 's/#/%23/g' )"
       - chmod 755 /tmp/oneliner
