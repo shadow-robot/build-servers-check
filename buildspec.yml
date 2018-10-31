@@ -7,7 +7,7 @@ env:
   variables:
      #change the line below to master (BEFORE MERGING!) 
      toolset_branch: "F#SRC-2345_aws_build_of_build-servers-check"
-     server_type: "aws"
+     server_type: "local-docker"
      used_modules: "check_cache,code_coverage"
      ros_release_name: "kinetic"
      ubuntu_version_name: "xenial"
@@ -23,9 +23,13 @@ phases:
       - echo Build started on `date`
       - env
       - ls -la "$relative_job_path"
+      - chown -R $MY_USERNAME:$MY_USERNAME $CODEBUILD_SRC_DIR
       - cp -r $CODEBUILD_SRC_DIR/* /home/user/workspace/src/
       - echo Running "$remote_shell_script" with stdin values $toolset_branch $server_type $used_modules $relative_job_path
-      - curl -s "$( echo "$remote_shell_script" | sed 's/#/%23/g' )" | bash /dev/stdin $toolset_branch $server_type $used_modules $relative_job_path 
+      - wget -O /tmp/oneliner "$( echo "$remote_shell_script" | sed 's/#/%23/g' )"
+      - chmod 755 /tmp/oneliner
+      - cd /tmp
+      - gosu $MY_USERNAME /tmp/oneliner "$toolset_branch" $server_type $used_modules $relative_job_path 
 artifacts:
   files:
     - 'codecoverage/*'
