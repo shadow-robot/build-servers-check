@@ -13,8 +13,8 @@ env:
      ubuntu_version_name: "xenial"
      docker_image_name: "shadowrobot/build-tools:xenial-kinetic"
      relative_job_path: "/home/user"
-     unit_tests_result_dir: "$relative_job_path/unit_tests"
-     coverage_tests_result_dir: "$relative_job_path/code_coverage"
+     unit_tests_result_dir: "/home/user/unit_tests"
+     coverage_tests_result_dir: "/home/user/code_coverage"
      #change the line below to "https://raw.githubusercontent.com/shadow-robot/sr-build-tools/master/bin/sr-run-ci-build.sh" (BEFORE MERGING)
      remote_shell_script: "https://raw.githubusercontent.com/shadow-robot/sr-build-tools/F%23SRC-2345_aws_build_of_build-servers-check/bin/sr-run-ci-build.sh"
 phases:
