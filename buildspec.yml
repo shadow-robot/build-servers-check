@@ -33,6 +33,6 @@ phases:
       - gosu $MY_USERNAME /tmp/oneliner $toolset_branch $server_type $used_modules $relative_job_path      
 artifacts:
   files:
-    - 'codecoverage/*'
-    - 'testresults/*'
+    - 'code_coverage/*'
+    - 'test_results/*'
   base-directory: '/home/user'
