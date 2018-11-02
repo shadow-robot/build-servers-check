@@ -19,6 +19,7 @@ phases:
       - chmod 755 /tmp/oneliner
       - gosu $MY_USERNAME /tmp/oneliner $toolset_branch $server_type $used_modules $relative_job_path
       - echo Build done
+      - cd $relative_job_path
       - ls -la 
 artifacts:
   files:
