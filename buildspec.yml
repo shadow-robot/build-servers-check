@@ -20,7 +20,15 @@ phases:
       - gosu $MY_USERNAME /tmp/oneliner $toolset_branch $server_type $used_modules $relative_job_path
       - echo Build done
       - cd $relative_job_path
-      - ls -la 
+      - ls -lrtha 
+      - cd $unit_tests_result_dir
+      - ls -lrtha 
+      - cd $coverage_tests_result_dir
+      - ls -lrtha
+      - cd "/home/user/workspace"
+      - ls -lrtha
+      - cd "/home/user/benchmarking_results"
+      - ls -lrtha
 artifacts:
   files:
     - '$unit_tests_result_dir/*'
