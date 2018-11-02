@@ -1,6 +1,6 @@
 | Build server  | Status |
 |---------------|--------|
-| AWS | ![Build Status](https://codebuild.eu-west-2.amazonaws.com/badges?uuid=eyJlbmNyeXB0ZWREYXRhIjoiUXc2R0VLRnhQNTRnN0pTRmFLVkUwMUVxTmxENERvOHhvSDF4RXRFTE1zQlpYOUxhUzFESWJJcDllNWFuOVRwdU4zY1MwZHptVTNHSk1IMzAxVDN3Z1NjPSIsIml2UGFyYW1ldGVyU3BlYyI6ImtlTVpRUVYyWi9mRnBYcDQiLCJtYXRlcmlhbFNldFNlcmlhbCI6MX0%3D&branch=F#SRC-2345_setup_aws_build_of_build-servers-check) 
+| AWS | ![Build Status](https://codebuild.eu-west-2.amazonaws.com/badges?uuid=eyJlbmNyeXB0ZWREYXRhIjoiUXc2R0VLRnhQNTRnN0pTRmFLVkUwMUVxTmxENERvOHhvSDF4RXRFTE1zQlpYOUxhUzFESWJJcDllNWFuOVRwdU4zY1MwZHptVTNHSk1IMzAxVDN3Z1NjPSIsIml2UGFyYW1ldGVyU3BlYyI6ImtlTVpRUVYyWi9mRnBYcDQiLCJtYXRlcmlhbFNldFNlcmlhbCI6MX0%3D&branch=F%23SRC-2345_setup_aws_build_of_build-servers-check) 
 | Travis | [![Build Status](https://travis-ci.org/shadow-robot/build-servers-check.svg)](https://travis-ci.org/shadow-robot/build-servers-check) |
 | Shippable | [![Build Status](https://api.shippable.com/projects/55ba073fedd7f2c0528ca1a8/badge?branchName=kinetic-devel)](https://app.shippable.com/projects/55ba073fedd7f2c0528ca1a8/builds/latest) |
 | Semaphore | [![Build Status](https://semaphoreci.com/api/v1/projects/3d9a5e21-cb5b-4fae-a942-93e6515682cb/571657/shields_badge.svg)](https://semaphoreci.com/shadow-robot/build-servers-check) |
