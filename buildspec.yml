@@ -17,7 +17,6 @@ phases:
       - export remote_shell_script="https://raw.githubusercontent.com/shadow-robot/sr-build-tools/$toolset_branch/bin/sr-run-ci-build.sh"
       - wget -O /tmp/oneliner "$( echo "$remote_shell_script" | sed 's/#/%23/g' )"
       - chmod 755 /tmp/oneliner
-      - cd /tmp
       - gosu $MY_USERNAME /tmp/oneliner $toolset_branch $server_type $used_modules $relative_job_path
       - echo Build done
       - ls -la 
