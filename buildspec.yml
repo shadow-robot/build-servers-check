@@ -8,19 +8,18 @@ env:
      relative_job_path: "/home/user"
      unit_tests_result_dir: "/home/user/unit_tests"
      coverage_tests_result_dir: "/home/user/code_coverage"
-     remote_shell_script: "https://raw.githubusercontent.com/shadow-robot/sr-build-tools/F%23SRC-2345_aws_build_of_build-servers-check/bin/sr-run-ci-build.sh"
 phases:
   build:
     commands:
       - echo Build started on `date`
       - env
       - chown -R $MY_USERNAME:$MY_USERNAME $CODEBUILD_SRC_DIR
+      - export remote_shell_script="https://raw.githubusercontent.com/shadow-robot/sr-build-tools/$toolset_branch/bin/sr-run-ci-build.sh"
       - wget -O /tmp/oneliner "$( echo "$remote_shell_script" | sed 's/#/%23/g' )"
       - chmod 755 /tmp/oneliner
       - cd /tmp
       - gosu $MY_USERNAME /tmp/oneliner $toolset_branch $server_type $used_modules $relative_job_path      
 artifacts:
   files:
-    - 'code_coverage/*'
-    - 'unit_tests/*'
-  base-directory: '/home/user'
+    - '$unit_tests_result_dir/*'
+    - '$coverage_tests_result_dir/*'
