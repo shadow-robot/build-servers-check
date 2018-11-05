@@ -1,5 +1,5 @@
 version: 0.2
- 
+
 env:
   variables:
      toolset_branch: "F#SRC-2345_aws_build_of_build-servers-check"
