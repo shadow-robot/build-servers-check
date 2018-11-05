@@ -4,7 +4,7 @@ env:
   variables:
      toolset_branch: "F#SRC-2345_aws_build_of_build-servers-check"
      server_type: "local-docker"
-     used_modules: "local,check_cache,code_coverage"
+     used_modules: "check_cache,code_coverage"
      relative_job_path: "/home/user"
      unit_tests_result_dir: "/home/user/unit_tests"
      coverage_tests_result_dir: "/home/user/code_coverage"
