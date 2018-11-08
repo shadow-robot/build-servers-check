@@ -11,8 +11,6 @@ env:
 phases:
   build:
     commands:
-      - echo Build started on `date`
-      - env
       - chown -R $MY_USERNAME:$MY_USERNAME $CODEBUILD_SRC_DIR
       - export remote_shell_script="https://raw.githubusercontent.com/shadow-robot/sr-build-tools/$toolset_branch/bin/sr-run-ci-build.sh"
       - wget -O /tmp/oneliner "$( echo "$remote_shell_script" | sed 's/#/%23/g' )"
