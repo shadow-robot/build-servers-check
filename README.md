@@ -6,7 +6,6 @@
 | Semaphore | [![Build Status](https://semaphoreci.com/api/v1/projects/3d9a5e21-cb5b-4fae-a942-93e6515682cb/571657/shields_badge.svg)](https://semaphoreci.com/shadow-robot/build-servers-check) |
 | Circle | [![Circle CI](https://circleci.com/gh/shadow-robot/build-servers-check.svg?style=shield)](https://circleci.com/gh/shadow-robot/build-servers-check) |
 | CodeCov | [![codecov.io](http://codecov.io/github/shadow-robot/build-servers-check/coverage.svg?branch=kinetic-devel)](http://codecov.io/github/shadow-robot/build-servers-check?branch=kinetic-devel) |
-
   
 # build-servers-check
 
