@@ -7,7 +7,7 @@
 | Circle | [![Circle CI](https://circleci.com/gh/shadow-robot/build-servers-check.svg?style=shield)](https://circleci.com/gh/shadow-robot/build-servers-check) |
 | CodeCov | [![codecov.io](http://codecov.io/github/shadow-robot/build-servers-check/coverage.svg?branch=kinetic-devel)](http://codecov.io/github/shadow-robot/build-servers-check?branch=kinetic-devel) |
 
-
+  
 # build-servers-check
 
 The sample stack to check status of the build servers.
