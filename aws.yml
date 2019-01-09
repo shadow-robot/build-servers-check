@@ -1,5 +1,5 @@
 settings:
-  computeType: BUILD_GENERAL1_SMALL
+  computeType: small
   ubuntu:
     version: trusty
   ros:
