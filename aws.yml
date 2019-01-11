@@ -12,7 +12,8 @@ settings:
     modules:
       - check_cache
       - code_coverage
-  
+
+
 trunks:
   - name: indigo-devel
     jobs:
