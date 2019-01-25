@@ -1,5 +1,5 @@
 settings:
-  computeType: small
+  machine_type: small
   ubuntu:
     version: trusty
   ros:
