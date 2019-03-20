@@ -24,7 +24,7 @@
 
 #include "sr_sample_cpp_library/sample_cpp_class.h"
 
-#include <string>
+//#include <string>
 
 namespace sr_sample_cpp_library
 {
