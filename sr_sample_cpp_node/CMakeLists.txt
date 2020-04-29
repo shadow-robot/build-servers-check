@@ -19,7 +19,7 @@ catkin_package(
 ## Build ##
 ###########
 
-include_directories(${sr_sample_cpp_library_INCLUDE_DIRS})
+include_directories(${sr_sample_cpp_library_INCLUDE_DIRS} ${catkin_INCLUDE_DIRS})
 
 add_executable(sample_cpp_node src/sample_cpp_node.cpp)
 
