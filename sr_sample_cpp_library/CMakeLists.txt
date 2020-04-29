@@ -19,7 +19,7 @@ catkin_package(
 ## Build ##
 ###########
 
-include_directories(include)
+include_directories(include ${catkin_INCLUDE_DIRS})
 
 add_library(sample_cpp_library
   src/sample_cpp_class.cpp
